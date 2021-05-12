@@ -35,6 +35,7 @@ class Client
     protected $thumbnailService;
     protected $logCollectorService;
     protected $serverService;
+    protected $serverUrl;
 
 	public function __construct($serverUrl, $username, $password, $orgId = null)
 	{

@@ -11,12 +11,16 @@
 	"homepage": "http://github.com/Jaspersoft/jrs-rest-php-client",
 	"keywords": ["jasperreports","jaspersoft", "jasper-reports", "reporting"],
     "require": {
-		"php": ">=5.3.0",
+		"php": ">=7.4",
 		"ext-curl": "*"
     },
 	"autoload": {
 		"psr-0": {
 			"Jaspersoft": "src/"
 		}
-	}
+	},
+    "require-dev": {
+        "phpstan/phpstan": "^0.12.86",
+        "phpunit/phpunit": "^9.5"
+    }
 }

@@ -20,6 +20,8 @@ class RESTRequest
     protected $headers;
     protected $curl_timeout;
     protected $curl_handle;
+    protected $curl_cookiejar;
+    protected $response_headers;
 
 	public function __construct ($url = null, $verb = 'GET', $request_body = null)
 	{
@@ -519,7 +521,14 @@ class RESTRequest
     }
 
 
-    public function sendBinary($url, $expectedCodes = array(200), $body, $contentType, $contentDisposition, $contentDescription, $verb = "POST")
+    public function sendBinary($url,
+        $contentDescription,
+        $body,
+        $contentType,
+        $contentDisposition,
+        $expectedCodes = array(200),
+        $verb = "POST"
+    )
     {
         $this->flush();
         $this->setUrl($url);

@@ -2,12 +2,13 @@
 
 use Jaspersoft\Client\Client as c;
 use Jaspersoft\Dto\Job\Job;
+use PHPUnit\Framework\TestCase;
 
-class BaseTest extends \PHPUnit_Framework_TestCase
+class BaseTest extends TestCase
 {
 	public $bootstrap;
 	
-	public function setUp() {
+	public function setUp(): void {
 		$this->bootstrap = parse_ini_file(dirname(__FILE__) . '/test.properties');
 		$this->jc = new c(
 				$this->bootstrap['hostname'],
@@ -17,7 +18,7 @@ class BaseTest extends \PHPUnit_Framework_TestCase
 		);
 	}
 	
-	public function tearDown() {
+	public function tearDown(): void {
 		
 	}
 	
